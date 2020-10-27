@@ -8,7 +8,8 @@ mkdir -p /var/db/rslsync
 
 ## install bin
 fetch -o /tmp https://download-cdn.resilio.com/stable/FreeBSD-x64/resilio-sync_freebsd_x64.tar.gz
-tar xzf /tmp/resilio-sync_freebsd_x64.tar.gz -C /usr/local/bin/
+tar xvzf /tmp/resilio-sync_freebsd_x64.tar.gz
+cp rslsync /usr/local/bin
 rm /tmp/resilio-sync_freebsd_x64.tar.gz
 
 # enable the service
