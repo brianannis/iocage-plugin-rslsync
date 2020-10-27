@@ -5,6 +5,7 @@ pw user add rslsync -c rslsync -u 817 -d /nonexistent -s /usr/bin/nologin
 
 ## create rslsync db and bin folder
 mkdir -p /var/db/rslsync
+chown rslsync:rslsync /var/db/rslsync
 mkdir -p /usr/local/bin
 
 ## install bin
