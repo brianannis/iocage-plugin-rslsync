@@ -11,7 +11,7 @@
 #
 # rslsync_enable (bool):        Set to NO by default.
 #                               Set it to YES to enable it.
-# rslsync_user:                 The user account rslsync daemon runs as
+# rslsync_user:        	        The user account rslsync daemon runs as
 #                               what you want it to be. It uses 'rslsync'
 #                               user by default. Do not sets it as empty or it
 #                               will run as root.
@@ -35,7 +35,9 @@ command_args="--config /usr/local/etc/rslsync.conf"
 
 start_precmd=rslsync_prestart
 rslsync_prestart() {
-        if [ ! -d ${pidfile%/*} ]; then
-                install -d -o ${rslsync_user} -g ${rslsync_group} ${pidfile%/*}
-        fi
+	if [ ! -d ${pidfile%/*} ]; then
+		install -d -o ${rslsync_user} -g ${rslsync_group} ${pidfile%/*}
+	fi
 }
+
+run_rc_command "$1"
